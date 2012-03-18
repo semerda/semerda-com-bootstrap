@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'website/common/head.html' %}
+
+<body>
+    {% include 'website/common/navbar.html' %}
+
+    <div class="container">
+      {% block container %}{% endblock %}
+
+      <hr>
+
+      {% include 'website/common/footer.html' %}
+    </div> <!-- /container -->
+
+<script type="text/javascript">
+
+// Load me
+Modernizr.load([
+{
+    load  : {// jQuery
+            'jquery'                : '/static/js/jquery-1.7.1.min.js',
+            // Semerda.com
+            'semerda.com.common'    : '/static/js/semerda.com.common.js',
+            'semerda.com.analytics' : '/static/js/semerda.com.analytics.js',
+            // handlebars
+            'handlebars.core'       : '/static/js/handlebars-1.0.0.beta.6.js',
+            'handlebars.helpers'    : '/static/js/handlebars.helpers.js'
+            {% block modernizr_load %}{% endblock %}
+            },
+    callback : function (url, result, key) {
+        console.log(url);
+        console.log(result);
+        console.log(key);
+    },
+    complete : function () {
+        console.log('complete default loaded');
+        {% block js_complete %}{% endblock %}
+        {% block js_handlebars %}{% endblock %}
+    }
+},
+// Twitter bootstrap
+{
+  load: ['/static/bootstrap/js/bootstrap-transition.js', '/static/bootstrap/js/bootstrap-alert.js',
+         '/static/bootstrap/js/bootstrap-modal.js', '/static/bootstrap/js/bootstrap-dropdown.js',
+         '/static/bootstrap/js/bootstrap-scrollspy.js', '/static/bootstrap/js/bootstrap-tab.js',
+         '/static/bootstrap/js/bootstrap-tooltip.js', '/static/bootstrap/js/bootstrap-popover.js',
+         '/static/bootstrap/js/bootstrap-button.js', '/static/bootstrap/js/bootstrap-collapse.js',
+         '/static/bootstrap/js/bootstrap-carousel.js', '/static/bootstrap/js/bootstrap-typeahead.js']
+  ,
+  complete: function () {
+    console.log('complete twitter loaded')
+    {% block js_twitterbootstrap %}{% endblock %}
+  }
+}
+]);
+
+</script>
+
+<!-- pb[ Node: {{ server_node }} | Cached: {% now "jS F Y H:i" %} ] -->
+    
+</body>
+</html>

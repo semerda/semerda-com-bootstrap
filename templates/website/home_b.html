@@ -1,0 +1,45 @@
+{% extends "website/base.html" %}
+
+{% block container %}
+      <div class="hero-unit">
+        <h1>Semerda.com Bootstrap</h1>
+        <p>Build in Python on Django web framework with Twitter's Bootstrap, Modernizr & handlebars.</p>
+        <p>View source to see modernizr & yapnope.js at work and click <a href="/about/" class="btn">about</a> to see handlebars in action.</p>
+        <p><a class="btn btn-mini btn-info" href="https://github.com/semerda/Feedback/issues/new" title="Leave Ernest Semerda feedback using GitHub" target="_blank"><i class="icon-comment icon-white"></i> Leave me feedback</a></p>
+      </div>
+
+      <!-- content row -->
+      <div class="row">
+        <div class="span4">
+          <h2><a href="http://gtdfaster.com/">GTDfaster iPhone App</a></h2>
+          <p>GTDfaster rests on David Allen's principle of Getting Things Done (GTD). That a person needs to move stuff out of the mind by recording them externally into a trusted source. GTDfaster is this trusted GTD source.</p>
+        </div>
+        <div class="span4">
+          <h2><a href="http://www.theroadtosiliconvalley.com/">The Road to Silicon Valley</a></h2>
+          <p>A Blog which provides tools and resources to anyone wanting to come and work in Silicon Valley's high tech industry. Experience is based on my own personal journey arriving in Silicon Valley on March 2009.</p>
+       </div>
+        <div class="span4">
+          <h2><a href="http://booksreadinglist.com/">Facebook ReadingList</a></h2>
+          <p>A popular free Facebook app to help you share, inspire & create a collection of books you have read, want to read or are reading. Start influencing your friends on Facebook today.</p>
+        </div>
+      </div>
+
+      <!-- action buttons -->
+      <div class="row">
+        <div class="span4">
+           <p><a href="http://gtdfaster.com/" class="btn btn-primary"><i class="icon-ok icon-white"></i> Visit GTDfaster</a></p>
+        </div>
+        <div class="span4">
+           <p><a href="http://www.theroadtosiliconvalley.com/" class="btn btn-primary"><i class="icon-comment icon-white"></i> Visit Blog</a></p>
+       </div>
+        <div class="span4">
+           <p><a href="http://booksreadinglist.com/" class="btn btn-primary"><i class="icon-book icon-white"></i> Visit ReadingList</a></p>
+        </div>
+      </div>
+{% endblock %}
+
+{% block js_complete %}
+        if (typeof SEMERDA.page != 'undefined') {
+            SEMERDA.page.init({primary:0}); // Homepage
+        }
+{% endblock %}
