@@ -1,0 +1,12 @@
+Goal for Semerda.com Bootstrap - To help ease with starting up new projects in Python on Django with jQuery, Twitter's Bootstrap, Modernizr & Handlebars.js.
+Read Wiki for more detail: https://github.com/semerda/semerda-com-bootstrap/wiki
+
+
+GENERAL
+- Django 1.4 structure ready.
+
+
+INSTALL REQUIREMENTS ON BOX
+
+1. Install requirements
+> sudo pip install -r requirements.txt
